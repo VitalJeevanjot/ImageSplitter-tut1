@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B8CC1EE52E12F6DE00C18E5E /* ImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC1EE42E12F6DE00C18E5E /* ImageViews.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		B8CC1EE42E12F6DE00C18E5E /* ImageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViews.swift; sourceTree = "<group>"; };
 		B8FD8BE12DFC9FE0001C6753 /* ImageSplitter-tut1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ImageSplitter-tut1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		B8FD8BD82DFC9FE0001C6753 = {
 			isa = PBXGroup;
 			children = (
+				B8CC1EE42E12F6DE00C18E5E /* ImageViews.swift */,
 				B8FD8BE32DFC9FE0001C6753 /* ImageSplitter-tut1 */,
 				B8FD8BE22DFC9FE0001C6753 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CC1EE52E12F6DE00C18E5E /* ImageViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

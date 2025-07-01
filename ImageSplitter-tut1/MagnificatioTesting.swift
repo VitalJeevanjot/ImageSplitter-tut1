@@ -8,10 +8,31 @@
 import SwiftUI
 
 struct MagnificatioTesting: View {
+    @GestureState private var magnifyBy = 1.0
+
+
+    var magnification: some Gesture {
+        MagnifyGesture()
+            .updating($magnifyBy) { value, gestureState, transaction in
+                gestureState = value.magnification
+            }
+    }
+
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader {
+            geom in
+            Image("1003")
+                .resizable()
+                .frame(width: geom.size.width, height: geom.size.height)
+                .scaleEffect(magnifyBy)
+                .gesture(magnification)
+        }.coordinateSpace(name: "inew")
+        
     }
 }
+
+
 
 #Preview {
     MagnificatioTesting()

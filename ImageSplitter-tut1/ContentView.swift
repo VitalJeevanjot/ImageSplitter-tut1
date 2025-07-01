@@ -8,16 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var toggle = false
+    
+    
+    @State private var widthOfLine: Double = 2
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Rectangle().fill(.yellow)
+            
+            VStack {
+
+                GeometryReader { geom in
+                    ImageViews(width: geom.size.width, height: geom.size.height)
+                }
+                .coordinateSpace(name: "ImageComparison")
+//                .border(.orange)
+            }.padding()
+                .ignoresSafeArea()
+            
+            
         }
-        .padding()
     }
 }
+
+struct MyClipShape: Shape {
+    var value: CGFloat
+    func path(in rect: CGRect) -> Path {
+        var rect = rect
+        rect.size.width = rect.size.width * value
+        return Path(roundedRect: rect, cornerRadius: 0)
+    }
+}
+
+struct MyClipShape2ndImg: Shape {
+    func path(in rect: CGRect) -> Path {
+        return Path(roundedRect: rect, cornerRadius: 0)
+    }
+}
+
 
 #Preview {
     ContentView()
