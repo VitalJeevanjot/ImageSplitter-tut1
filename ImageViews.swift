@@ -55,7 +55,7 @@ struct ImageViews: View {
         ZStack {
             Image("1003")
                 .resizable()
-                .aspectRatio(3/4, contentMode: .fit)
+//                .aspectRatio(3/4, contentMode: .fit)
                 .scaleEffect(magnifyBy1)
                 .clipShape(MyClipShape2ndImg())
                 .gesture(magnification1)
@@ -66,7 +66,7 @@ struct ImageViews: View {
             
             Image("1004")
                 .resizable()
-                .aspectRatio(3/4, contentMode: .fit)
+//                .aspectRatio(3/4, contentMode: .fit)
                 .scaleEffect(magnifyBy2)
                 .gesture(magnification2)
                 .clipShape(MyClipShape(value: (oldValue == nil ? vars.simpleVar : oldValue!) / width))
@@ -80,6 +80,7 @@ struct ImageViews: View {
                 .contentShape(MyRectangleShapeHit(originX: oldValue == nil ? vars.simpleVar : oldValue!))
                 .opacity(oldValue == nil ? 1 : 0.5)
                 .clipShape(MyRectangleShape(originX: oldValue == nil ? vars.simpleVar : oldValue!, widthAdd: oldValue == nil ? 5 : 10))
+//                .aspectRatio(3/4, contentMode: .fit)
                 .gesture(dragGesture)
                 .animation(.default, value: oldValue == nil)
         }

@@ -23,6 +23,7 @@ struct ContentView: View {
                 GeometryReader { geom in
                     ImageViews(width: geom.size.width, height: geom.size.height)
                 }
+                .aspectRatio(3/4, contentMode: .fit)
                 .coordinateSpace(name: "ImageComparison")
 //                .border(.orange)
             }.padding()
